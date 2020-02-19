@@ -15,14 +15,14 @@ class App {
     this.template();
   }
 
-  private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void; }) {
-    middleWares.forEach((middleWare) => {
+  private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void }) {
+    middleWares.forEach(middleWare => {
       this.app.use(middleWare);
     });
   }
 
-  private routes(controllers: { forEach: (arg0: (controller: any) => void) => void; }) {
-    controllers.forEach((controller) => {
+  private routes(controllers: { forEach: (arg0: (controller: any) => void) => void }) {
+    controllers.forEach(controller => {
       this.app.use('/', controller.router);
     });
   }
