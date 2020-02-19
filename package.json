@@ -9,9 +9,8 @@
     "build": "npm run build-ts && npm run lint",
     "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
     "build-ts": "tsc -p .",
-    "watch-ts": "tsc -w",
     "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src",
-    "lint:fix": "tsc --noEmit && eslint \"src/**/*.{js,ts}\" --fix"
+    "lint:fix": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src --fix"
   },
   "author": "",
   "license": "MIT",

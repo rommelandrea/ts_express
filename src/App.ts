@@ -16,13 +16,13 @@ class App {
   }
 
   private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void }) {
-    middleWares.forEach(middleWare => {
+    middleWares.forEach((middleWare) => {
       this.app.use(middleWare);
     });
   }
 
   private routes(controllers: { forEach: (arg0: (controller: any) => void) => void }) {
-    controllers.forEach(controller => {
+    controllers.forEach((controller) => {
       this.app.use('/', controller.router);
     });
   }
