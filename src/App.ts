@@ -1,4 +1,5 @@
 import express from 'express';
+import Logger from './config/Logger';
 
 class App {
   public app: express.Application;
@@ -12,7 +13,7 @@ class App {
     this.middlewares(appInit.middleWares);
     this.routes(appInit.controllers);
     this.assets();
-    this.template();
+    // this.template();
   }
 
   private middlewares(middleWares: { forEach: (arg0: (middleWare: any) => void) => void }) {
@@ -29,16 +30,16 @@ class App {
 
   private assets() {
     this.app.use(express.static('public'));
-    this.app.use(express.static('views'));
+    // this.app.use(express.static('views'));
   }
 
-  private template() {
-    this.app.set('view engine', 'pug');
-  }
+  // private template() {
+  //   this.app.set('view engine', 'pug');
+  // }
 
   public listen() {
     this.app.listen(this.port, () => {
-      console.log(`App listening on the http://localhost:${this.port}`);
+      Logger.info(`App listening on the http://localhost:${this.port}`);
     });
   }
 }
